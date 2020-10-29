@@ -1,6 +1,6 @@
-# barber-shop-v1
+# barbershop
 
-https://swok-kh.github.io/barber-shop-v1/
+https://tetianasv.github.io/barbershop-project/
 
 # В проекте участвовали
 

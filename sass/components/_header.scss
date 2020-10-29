@@ -1,0 +1,218 @@
+.header {
+	position: relative; // for slider
+	max-width: $mobile;
+	height: 580px;
+	margin-left: auto;
+	margin-right: auto;
+	overflow: hidden;
+	z-index: 1;
+	transition: 0.5s;
+	transition-duration: $animation-duration;
+	transition-timing-function: $animation-timing-function;
+
+	@media screen and(min-width:$tablet) {
+		max-width: $tablet;
+	}
+	@media screen and (min-width: $desktop) {
+		max-width: $desktop;
+	}
+	@media screen and (min-width: $tablet) {
+		height: 680px;
+	}
+}
+
+.header .container {
+	@extend %content-container;
+	padding-top: 40px;
+	@media screen and (min-width: $tablet) {
+		padding: 0;
+		width: $tablet - 120px - 20px;
+		margin-left: 120px;
+	}
+	@media screen and (min-width: $desktop) {
+		width: $desktop - 155px;
+		margin-left: 155px;
+	}
+}
+.header li {
+	@extend %reset-list;
+}
+.header-menu-item {
+	&:not(:last-child) {
+		margin-bottom: 24px;
+	}
+}
+.header-link {
+	@extend %reset-link;
+	color: $main-text-color;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 18px;
+	line-height: 25px;
+	text-align: center;
+	letter-spacing: 0.1em;
+	@include transition(color);
+
+	&:hover,
+	&:active {
+		color: $accent-color;
+	}
+}
+.header-navigation {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.header-logo {
+	fill: currentColor;
+	color: #ffffff;
+	@media screen and (min-width: $tablet) {
+		display: none;
+	}
+}
+
+.header-wrapper {
+	@media screen and (max-width: $tablet - 1px) {
+		display: none; /* пункты меню скрыты */
+		z-index: 1;
+		background: #ffffff;
+		position: absolute;
+		top: -50px;
+		right: -50px;
+		margin: 0;
+		padding: 118px 40px 227px;
+		width: 337px;
+	}
+
+	@media screen and (min-width: $tablet) {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+		justify-content: flex-end;
+		padding-left: 0;
+		margin: 0;
+	}
+	@media screen and (min-width: $desktop) {
+		flex-wrap: nowrap;
+		justify-content: flex-start;
+	}
+}
+
+.menu__item {
+	&.menu-order {
+		@media screen and (min-width: $tablet) and (max-width: $desktop - 1px) {
+			order: 1;
+		}
+		@media screen and (min-width: $desktop) {
+			margin-left: auto;
+			margin-right: 40px;
+		}
+	}
+}
+
+.header-transition {
+	display: none;
+}
+
+.menu__item ul {
+	padding: 0;
+}
+.header-contact {
+	margin-top: 64px;
+	text-transform: uppercase;
+	@media screen and (min-width: $tablet) {
+		font-size: 12px;
+		line-height: 16px;
+		margin-top: 0;
+		color: $primary-background-color;
+		margin-top: 20px;
+		margin-right: 19px;
+	}
+	@media screen and (min-width: $desktop) {
+		margin-top: 0;
+		margin-right: 0;
+	}
+}
+.header-contact-button {
+	margin-top: 24px;
+	margin-bottom: 64px;
+	@media screen and (min-width: $tablet) {
+		margin: 0;
+		color: $primary-background-color;
+	}
+}
+.header-socials {
+	@media screen and (min-width: $tablet) {
+		display: none;
+	}
+}
+.header-socials-link {
+	font-style: normal;
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 19px;
+	letter-spacing: 0.2em;
+	&.decorative-line {
+		padding-left: 100px;
+	}
+}
+.header-link-youtube {
+	padding-left: 100px;
+	padding-top: 24px;
+	@media screen and (min-width: $tablet) {
+		padding-top: 0;
+	}
+}
+
+//header-content
+.header-content {
+	padding-top: 112px;
+	max-width: 320px;
+	@media screen and (min-width: $tablet) {
+		padding-top: 120px;
+		padding-left: 156px;
+		max-width: 510px;
+	}
+	@media screen and (min-width: $desktop) {
+		padding-top: 184px;
+		padding-left: 100px;
+		max-width: 600px;
+	}
+}
+.header-title {
+	font-style: normal;
+	font-weight: bold;
+	font-size: 40px;
+	line-height: 1.17;
+	letter-spacing: 0.05em;
+	margin: 20px 0;
+	color: #ffffff;
+	@media screen and (min-width: $mobile) {
+		font-size: 48px;
+	}
+	@media screen and (min-width: $desktop) {
+		font-size: 72px;
+		line-height: 1.18;
+	}
+}
+.header-content-subtitle {
+	font-style: normal;
+	font-weight: 600;
+	font-size: 11px;
+	line-height: 15px;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	color: $header-prices-subtitle-color;
+}
+.header-content-text {
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 26px;
+	letter-spacing: 0.02em;
+	color: $header-prices-footer-gray-color;
+	@media screen and (min-width: $desktop) {
+		padding-right: 100px;
+	}
+}

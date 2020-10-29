@@ -1,0 +1,113 @@
+html {
+	box-sizing: border-box;
+}
+* {
+	box-sizing: inherit;
+	&:focus {
+		outline: none;
+	}
+	&::before,
+	&::after {
+		box-sizing: inherit;
+	}
+}
+body {
+	font-family: $primary-font;
+	color: $main-text-color;
+	background-color: $primary-background-color;
+	letter-spacing: 0.02em;
+	font-style: normal;
+	font-weight: 400;
+}
+.no-scroll {
+	overflow: hidden;
+}
+.scroll-up {
+	position: fixed;
+	right: 5px;
+	bottom: 10px;
+	&-link {
+		@extend %reset-link;
+		color: $header-prices-subtitle-color;
+		&:hover,
+		&:focus {
+			color: $accent-color;
+		}
+	}
+	&-icon {
+		width: 25px;
+		height: 25px;
+		fill: currentColor;
+	}
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	padding: 0;
+}
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+%reset-link {
+	display: inline-block;
+
+	text-decoration: none;
+}
+%reset-list {
+	margin: 0;
+	padding: 0;
+
+	list-style-type: none;
+}
+
+%content-container {
+	margin-left: auto;
+	margin-right: auto;
+
+	padding: 84px 30px;
+
+	@media screen and (min-width: $mobile) {
+		width: $mobile;
+	}
+	@media screen and (min-width: $tablet) {
+		width: $tablet;
+		padding: 100px 40px;
+	}
+	@media screen and (min-width: $desktop) {
+		width: $desktop;
+		padding: 130px 55px;
+	}
+}
+
+%section-title {
+	margin-bottom: 44px;
+
+	font-family: $secondary-font;
+	font-weight: 700;
+	font-size: 30px;
+	line-height: 1.17;
+	letter-spacing: 0.05em;
+	color: $title-text-color;
+	@media screen and (min-width: $mobile) {
+		font-size: 42px;
+	}
+}
+
+%section-subtitle {
+	margin-bottom: 20px;
+
+	font-weight: 600;
+	font-size: 11px;
+	line-height: 1.36;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	color: $title-text-color;
+}
